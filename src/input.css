@@ -93,7 +93,7 @@ body::before {
 .eyebrow {
   font-family: theme('fontFamily.mono');
   font-size: 11.5px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--gold);
   display: inline-flex;
@@ -103,8 +103,14 @@ body::before {
 }
 .eyebrow::before {
   content: "";
-  width: 28px; height: 1.5px;
+  width: 36px; height: 1.4px;
+  background: linear-gradient(90deg, var(--gold), color-mix(in oklab, var(--gold) 30%, transparent));
+}
+.eyebrow::after {
+  content: ""; width: 6px; height: 6px; border-radius: 50%;
   background: var(--gold);
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--gold) 20%, transparent);
+  margin-left: -2px;
 }
 
 /* ============================================================ */
@@ -273,6 +279,107 @@ nav.top.shrunk .main-row { height: 68px; }
 .btn-lg { padding: 19px 30px; font-size: 15.5px; }
 
 /* ============================================================ */
+/* BADGE / MEDALLION / FEATURE — sotaques inspirados no flyer  */
+/* ============================================================ */
+.badge-gold {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 8px 20px;
+  background: var(--gold); color: var(--bg);
+  border-radius: 999px;
+  font-family: theme('fontFamily.mono');
+  font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase; font-weight: 600;
+  box-shadow:
+    0 10px 30px -10px color-mix(in oklab, var(--gold) 55%, transparent),
+    inset 0 0 0 1px color-mix(in oklab, #fff 22%, transparent);
+}
+.badge-gold .dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--bg);
+  animation: dotpulse 2.4s infinite var(--ease-out);
+}
+
+.medallion {
+  width: 54px; height: 54px; border-radius: 50%;
+  background: linear-gradient(140deg, var(--bg-2) 0%, var(--bg-3) 100%);
+  border: 1.4px solid var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold); flex-shrink: 0;
+  box-shadow:
+    0 12px 28px -10px rgba(0,0,0,.45),
+    inset 0 0 0 4px var(--bg-2),
+    inset 0 0 0 5px color-mix(in oklab, var(--gold) 22%, transparent);
+}
+.medallion svg { width: 24px; height: 24px; }
+.medallion.sm { width: 40px; height: 40px; }
+.medallion.sm svg { width: 18px; height: 18px; }
+.medallion.lg { width: 64px; height: 64px; }
+.medallion.lg svg { width: 28px; height: 28px; }
+
+.feature-row {
+  display: flex; gap: 18px; align-items: flex-start;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.feature-row:last-child { border-bottom: 0; }
+.feature-row .text {
+  font-size: 16px; line-height: 1.55; color: var(--ink);
+  padding-top: 12px;
+}
+.feature-row .text strong { font-weight: 500; color: var(--gold); }
+
+.gold-sep {
+  display: flex; align-items: center; gap: 14px;
+  margin: 28px 0 12px;
+}
+.gold-sep .line {
+  flex: 0 0 110px; height: 1px;
+  background: linear-gradient(90deg, var(--gold) 0%, transparent 100%);
+}
+.gold-sep .dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--gold);
+  box-shadow:
+    0 0 0 5px color-mix(in oklab, var(--gold) 22%, transparent),
+    0 0 16px var(--gold);
+}
+
+.cream-panel {
+  background: var(--ink); color: var(--bg);
+  border-radius: 14px;
+  padding: 22px 26px;
+  display: flex; gap: 18px; align-items: center;
+  box-shadow:
+    0 28px 60px -22px rgba(0,0,0,.55),
+    inset 0 0 0 1px color-mix(in oklab, var(--gold) 30%, transparent);
+  position: relative;
+}
+.cream-panel .medallion {
+  background: linear-gradient(140deg, var(--bg) 0%, var(--bg-2) 100%);
+  border-color: var(--gold);
+  box-shadow: inset 0 0 0 3px var(--bg), inset 0 0 0 4px color-mix(in oklab, var(--gold) 26%, transparent);
+}
+.cream-panel .text { font-size: 15px; line-height: 1.5; }
+.cream-panel .text strong { color: var(--gold-dk); font-weight: 600; }
+
+/* ============================================================ */
+/* GEO PATTERN — eco do mosaico floral da marca                 */
+/* ============================================================ */
+.geo-pattern {
+  position: absolute; pointer-events: none; z-index: 0;
+  color: var(--gold);
+  opacity: 0.22;
+}
+.geo-pattern.tr {
+  top: -40px; right: -40px;
+  width: 360px; height: 540px;
+}
+.geo-pattern.bl {
+  bottom: -60px; left: -80px;
+  width: 280px; height: 280px;
+  opacity: 0.12;
+}
+
+/* ============================================================ */
 /* REVEAL / WORD STAGGER                                        */
 /* ============================================================ */
 .reveal {
@@ -349,7 +456,8 @@ nav.top.shrunk .main-row { height: 68px; }
   position: absolute; bottom: 16px; right: 16px;
   font-family: theme('fontFamily.mono'); font-size: 10.5px; color: var(--ink-soft);
 }
-.hero-portrait { aspect-ratio: 4/5; border-radius: 8px; will-change: transform; }
+.hero-side { position: relative; }
+.hero-portrait { aspect-ratio: 4/5; border-radius: 8px; will-change: transform; position: relative; z-index: 1; }
 
 .float-chip {
   position: absolute; display: flex; align-items: center; gap: 10px;
