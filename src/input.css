@@ -34,7 +34,7 @@
 }
 
 @layer base {
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; overflow-anchor: none; }
   body {
     background:
       radial-gradient(circle at 12% 8%, color-mix(in oklab, var(--teal) 22%, transparent), transparent 28%),

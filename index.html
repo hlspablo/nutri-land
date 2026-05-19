@@ -677,7 +677,7 @@
   const topnav = document.getElementById('topnav');
   let lastShrunk = false;
   window.addEventListener('scroll', () => {
-    const should = window.scrollY > 90;
+    const should = lastShrunk ? window.scrollY > 40 : window.scrollY > 140;
     if (should !== lastShrunk) { topnav.classList.toggle('shrunk', should); lastShrunk = should; }
     if (activeLink) movePillTo(activeLink);
   }, { passive: true });
