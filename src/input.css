@@ -672,12 +672,9 @@ nav.top.shrunk .main-row { height: 68px; }
 .media-card .nav:active { transform: translateY(-50%) scale(.96); }
 
 @media (hover: none) {
-  .media-card .nav {
-    opacity: .9;
-    background: color-mix(in oklab, var(--bg) 70%, transparent);
-  }
-  .media-card .nav.prev { left: 10px; }
-  .media-card .nav.next { right: 10px; }
+  .media-card { touch-action: pan-y; cursor: grab; }
+  .media-card:active { cursor: grabbing; }
+  .media-card .nav { display: none; }
 }
 
 .hero-stats {
