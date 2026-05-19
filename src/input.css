@@ -153,11 +153,11 @@ body::before {
 nav.top {
   position: sticky; top: 0; z-index: 50;
   background:
-    linear-gradient(90deg, color-mix(in oklab, var(--bg) 92%, transparent), color-mix(in oklab, var(--bg-2) 88%, transparent)),
-    radial-gradient(circle at 82% 0%, color-mix(in oklab, var(--teal) 18%, transparent), transparent 34%);
-  backdrop-filter: saturate(150%) blur(18px);
+    linear-gradient(90deg, var(--bg), var(--bg-2));
   border-bottom: 1px solid color-mix(in oklab, var(--teal) 24%, var(--rule-soft));
   transition: border-color .3s;
+  isolation: isolate;
+  transform: translateZ(0);
 }
 .util {
   border-bottom: 1px solid var(--rule-soft);
@@ -596,32 +596,6 @@ nav.top.shrunk .main-row { height: 68px; }
     -28px -28px 0 -18px color-mix(in oklab, var(--teal) 20%, transparent);
 }
 
-.float-chip {
-  position: absolute; display: flex; align-items: center; gap: 10px;
-  padding: 10px 14px; border-radius: 999px;
-  background: color-mix(in oklab, var(--bg-2) 78%, transparent); border: 1px solid color-mix(in oklab, var(--teal) 26%, var(--rule));
-  backdrop-filter: blur(14px);
-  box-shadow: 0 18px 40px -22px rgba(0,0,0,.55);
-  font-family: theme('fontFamily.mono'); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--ink-soft);
-  animation: float 7s ease-in-out infinite;
-}
-.float-chip .ic { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 14px var(--teal); }
-.float-chip.gold .ic { background: var(--gold); box-shadow: 0 0 14px var(--gold); }
-.float-chip.t3 .ic { background: var(--coral); box-shadow: 0 0 14px var(--coral); }
-.float-chip.t1 { top: 8%;   left: -14%; animation-delay: -1.2s; }
-.float-chip.t2 { top: 48%;  right: -6%; animation-delay: -3.6s; }
-.float-chip.t3 { bottom: 6%; left: -8%; animation-delay: -5s; }
-@media (max-width: 1000px) {
-  .float-chip.t1 { left:  -2%; }
-  .float-chip.t2 { right: -2%; }
-  .float-chip.t3 { left:   2%; }
-}
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-12px); }
-}
-
 .hero-stats {
   display: grid; grid-template-columns: repeat(3, 1fr);
   border-top: 1px solid color-mix(in oklab, var(--teal) 24%, var(--rule));
@@ -1055,6 +1029,147 @@ footer {
 @keyframes expand { 0% { transform: scale(1); opacity: .6; } 100% { transform: scale(1.45); opacity: 0; } }
 
 .row-between { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; }
+
+/* ============================================================ */
+/* CONSULTORIA — para quem é + diferenciais                     */
+/* ============================================================ */
+#consultoria {
+  background:
+    radial-gradient(ellipse 44% 32% at 12% 14%, color-mix(in oklab, var(--aqua) 12%, transparent), transparent 62%),
+    radial-gradient(ellipse 42% 32% at 88% 84%, color-mix(in oklab, var(--gold) 14%, transparent), transparent 64%),
+    color-mix(in oklab, var(--bg-2) 45%, var(--bg));
+}
+.consult-intro {
+  font-size: 17px; color: var(--ink-soft);
+  max-width: 460px; line-height: 1.7;
+}
+.consult-grid {
+  margin-top: 72px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 22px;
+}
+@media (max-width: 880px) { .consult-grid { grid-template-columns: 1fr; } }
+.consult-col {
+  --c-accent: var(--teal);
+  padding: 44px 38px;
+  border: 1px solid color-mix(in oklab, var(--c-accent) 26%, var(--rule));
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 100% 0%, color-mix(in oklab, var(--c-accent) 14%, transparent), transparent 44%),
+    color-mix(in oklab, var(--bg-2) 70%, transparent);
+  position: relative;
+}
+.consult-col::before {
+  content: "";
+  position: absolute;
+  left: 28px; right: 28px; top: 0; height: 3px;
+  background: linear-gradient(90deg, transparent, var(--c-accent), transparent);
+  opacity: .85;
+}
+.consult-col.gold { --c-accent: var(--gold); }
+.consult-col .col-head {
+  display: flex; gap: 18px; align-items: baseline;
+  padding-bottom: 20px;
+  border-bottom: 1px solid color-mix(in oklab, var(--c-accent) 30%, var(--rule));
+  margin-bottom: 26px;
+}
+.consult-col .col-head .ix {
+  font-family: theme('fontFamily.mono');
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: color-mix(in oklab, var(--c-accent) 70%, var(--ink-soft));
+}
+.consult-col h3 {
+  font-family: theme('fontFamily.serif');
+  font-size: 32px; line-height: 1.05; letter-spacing: -0.018em;
+  font-weight: 400; color: var(--ink);
+}
+.consult-col h3 em { font-style: italic; color: var(--c-accent); font-weight: 300; }
+
+.check-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.check-list li {
+  display: flex; align-items: center; gap: 14px;
+  font-size: 16px; line-height: 1.45; color: var(--ink);
+}
+.check-list li .ico {
+  flex: 0 0 26px; width: 26px; height: 26px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: color-mix(in oklab, var(--c-accent) 14%, var(--bg-2));
+  border: 1px solid color-mix(in oklab, var(--c-accent) 38%, var(--rule));
+  color: var(--c-accent);
+}
+.check-list li .ico svg { width: 14px; height: 14px; }
+.check-list.gold li .ico {
+  background: linear-gradient(135deg, var(--sun), var(--gold) 55%, var(--coral));
+  border-color: color-mix(in oklab, var(--gold) 60%, var(--coral));
+  color: var(--bg);
+  box-shadow: 0 8px 18px -10px color-mix(in oklab, var(--gold) 60%, transparent);
+}
+
+.philo-panel {
+  margin-top: 72px;
+  max-width: none;
+}
+.philo-panel .text {
+  font-family: theme('fontFamily.serif');
+  font-size: clamp(22px, 2.6vw, 30px);
+  line-height: 1.32;
+  letter-spacing: -0.012em;
+  font-weight: 400;
+}
+.philo-panel .text em { font-style: italic; color: var(--clay); font-weight: 400; }
+.philo-panel .text strong { color: var(--clay); font-weight: 600; }
+.philo-panel .author {
+  display: block; margin-top: 14px;
+  font-family: theme('fontFamily.mono');
+  font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: color-mix(in oklab, var(--bg) 60%, transparent);
+}
+
+/* Areas chips inside Sobre (5 áreas de atuação) */
+.areas-chips {
+  margin-top: 32px;
+  display: flex; flex-wrap: wrap; gap: 10px;
+}
+.areas-chips .chip {
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 9px 16px; border-radius: 999px;
+  font-family: theme('fontFamily.mono');
+  font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase;
+  background: color-mix(in oklab, var(--teal) 10%, var(--bg-2));
+  border: 1px solid color-mix(in oklab, var(--teal) 28%, var(--rule));
+  color: var(--ink);
+  transition: transform .25s var(--ease-out), border-color .25s, background .25s;
+}
+.areas-chips .chip:hover { transform: translateY(-2px); border-color: var(--gold); background: color-mix(in oklab, var(--gold) 12%, var(--bg-2)); }
+.areas-chips .chip .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 10px color-mix(in oklab, var(--gold) 60%, transparent);
+}
+.areas-chips .chip:nth-child(2) .dot { background: var(--teal);  box-shadow: 0 0 10px color-mix(in oklab, var(--teal) 60%, transparent); }
+.areas-chips .chip:nth-child(3) .dot { background: var(--coral); box-shadow: 0 0 10px color-mix(in oklab, var(--coral) 60%, transparent); }
+.areas-chips .chip:nth-child(4) .dot { background: var(--aqua);  box-shadow: 0 0 10px color-mix(in oklab, var(--aqua) 60%, transparent); }
+.areas-chips .chip:nth-child(5) .dot { background: var(--rose);  box-shadow: 0 0 10px color-mix(in oklab, var(--rose) 60%, transparent); }
+
+/* Atuação complementar — small icons row */
+.experience-strip {
+  margin-top: 36px; padding-top: 28px;
+  border-top: 1px dashed var(--rule);
+  display: flex; flex-wrap: wrap; gap: 22px 32px;
+  font-family: theme('fontFamily.mono');
+  font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.experience-strip span {
+  display: inline-flex; align-items: center; gap: 9px;
+}
+.experience-strip span::before {
+  content: ""; width: 5px; height: 5px; border-radius: 50%;
+  background: var(--gold);
+}
+.experience-strip span:nth-child(2)::before { background: var(--teal); }
+.experience-strip span:nth-child(3)::before { background: var(--coral); }
+.experience-strip span:nth-child(4)::before { background: var(--aqua); }
+.experience-strip span:nth-child(5)::before { background: var(--rose); }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal, .word > span { transition: none !important; opacity: 1 !important; transform: none !important; }
