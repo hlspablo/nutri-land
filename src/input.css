@@ -244,7 +244,7 @@ nav.top.shrunk .main-row { height: 68px; }
   padding: 9px 18px; border-radius: 999px;
   transition: color .25s; letter-spacing: -0.005em;
 }
-.nav-links a:hover { color: var(--ink); }
+.nav-links a:hover { color: var(--bg); font-weight: 500; }
 .nav-links a.active { color: var(--bg); font-weight: 500; }
 .nav-links .pill {
   position: absolute; top: 5px; left: 0;
