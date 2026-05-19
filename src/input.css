@@ -597,6 +597,89 @@ nav.top.shrunk .main-row { height: 68px; }
 }
 .hero-side .cream-panel { position: relative; z-index: 2; }
 
+/* ============================================================ */
+/* MEDIA CARD — carousel reutilizável (retrato + about)         */
+/* ============================================================ */
+.media-card {
+  position: relative; overflow: hidden;
+  border: 1px solid color-mix(in oklab, var(--teal) 28%, var(--rule));
+  isolation: isolate;
+}
+.media-card .slide {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: center 32%;
+  opacity: 0;
+  transition: opacity 1.1s var(--ease-out), transform 7s linear;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none; -webkit-user-drag: none;
+}
+.media-card .slide.active {
+  opacity: 1; z-index: 2;
+  transform: scale(1.04);
+}
+.media-card::before {
+  content: "";
+  position: absolute; inset: 0; z-index: 3;
+  background:
+    linear-gradient(180deg, rgba(8,36,31,.18) 0%, rgba(8,36,31,0) 22%, rgba(8,36,31,0) 60%, rgba(8,36,31,.72) 100%);
+  pointer-events: none;
+}
+.media-card::after {
+  content: attr(data-label);
+  position: absolute; top: 16px; left: 16px; z-index: 4;
+  font-family: theme('fontFamily.mono'); font-size: 10.5px;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  background: color-mix(in oklab, var(--bg) 76%, transparent);
+  border: 1px solid color-mix(in oklab, var(--teal) 30%, transparent);
+  padding: 6px 10px; border-radius: 3px;
+  color: var(--ink-soft);
+  backdrop-filter: blur(10px);
+}
+.media-card .corner {
+  position: absolute; bottom: 14px; right: 16px; z-index: 4;
+  font-family: theme('fontFamily.mono'); font-size: 11px; letter-spacing: 0.16em;
+  color: var(--ink);
+  padding: 5px 10px; border-radius: 3px;
+  background: color-mix(in oklab, var(--bg) 60%, transparent);
+  backdrop-filter: blur(10px);
+}
+.media-card .corner .sep { color: color-mix(in oklab, var(--ink) 45%, transparent); }
+.media-card .corner .cur { color: var(--gold); }
+
+.media-card .nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 44px; height: 44px; border-radius: 50%;
+  background: color-mix(in oklab, var(--bg) 60%, transparent);
+  border: 1px solid color-mix(in oklab, var(--teal) 34%, var(--rule));
+  color: var(--ink);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; z-index: 5;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: opacity .3s var(--ease-out), background .2s, border-color .2s, transform .25s var(--ease-bounce);
+  padding: 0;
+}
+.media-card .nav svg { width: 20px; height: 20px; }
+.media-card .nav.prev { left: 14px; }
+.media-card .nav.next { right: 14px; }
+.media-card:hover .nav,
+.media-card:focus-within .nav { opacity: 1; }
+.media-card .nav:hover {
+  background: var(--gold); color: var(--bg); border-color: var(--gold);
+  transform: translateY(-50%) scale(1.08);
+}
+.media-card .nav:active { transform: translateY(-50%) scale(.96); }
+
+@media (hover: none) {
+  .media-card .nav {
+    opacity: .9;
+    background: color-mix(in oklab, var(--bg) 70%, transparent);
+  }
+  .media-card .nav.prev { left: 10px; }
+  .media-card .nav.next { right: 10px; }
+}
+
 .hero-stats {
   display: grid; grid-template-columns: repeat(3, 1fr);
   border-top: 1px solid color-mix(in oklab, var(--teal) 24%, var(--rule));
