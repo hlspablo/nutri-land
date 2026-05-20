@@ -6,6 +6,23 @@
   <title>Dr. Antônio Wellington · Medicina do Emagrecimento</title>
   <meta name="description" content="Ciência e cuidado para uma vida mais longa e leve. Medicina do emagrecimento, atendimento presencial e online — Dr. Antônio Wellington, CRM 3038-PI." />
 
+  <link rel="icon" href="./src/assets/favicon/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./src/assets/favicon/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./src/assets/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="./src/assets/favicon/favicon-48x48.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="./src/assets/favicon/favicon-192x192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="./src/assets/favicon/favicon-512x512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./src/assets/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="./src/assets/favicon/site.webmanifest" />
+  <meta name="theme-color" content="#08241f" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Dr. Antônio Wellington · Medicina do Emagrecimento" />
+  <meta property="og:description" content="Ciência e cuidado para uma vida mais longa e leve. Medicina do emagrecimento, atendimento presencial e online." />
+  <meta property="og:image" content="./src/assets/favicon/favicon-512x512.png" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta name="twitter:card" content="summary" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -31,7 +48,9 @@
 
   <div class="wrap main-row">
     <a href="#" class="logo">
-      <span class="mark" aria-hidden="true"></span>
+      <span class="mark" aria-hidden="true">
+        <img src="./src/assets/logo-mini.png" alt="" />
+      </span>
       <span class="name">
         <span class="nm">Dr. Antônio <em>Wellington</em></span>
         <span class="crn">Medicina do Emagrecimento · CRM 3038-PI</span>
@@ -81,7 +100,7 @@
   <div class="wrap">
     <div class="reveal flex items-center gap-4 mb-10 flex-wrap">
       <span class="badge-gold"><span class="dot"></span> Novidade</span>
-      <span class="font-mono text-[11px] tracking-[0.22em] uppercase text-[var(--ink-soft)]">Maio 2026 · Aceitando novos pacientes</span>
+      <span id="heroDate" class="font-mono text-[11px] tracking-[0.22em] uppercase text-[var(--ink-soft)]">Aceitando novos pacientes</span>
     </div>
 
     <div class="hero-grid">
@@ -581,7 +600,9 @@
     <div class="foot-grid">
       <div>
         <a href="#" class="logo">
-          <span class="mark" aria-hidden="true"></span>
+          <span class="mark" aria-hidden="true">
+            <img src="./src/assets/logo-mini.png" alt="" />
+          </span>
           <span class="name"><span class="nm">Dr. Antônio <em>Wellington</em></span></span>
         </a>
         <p>Ciência e cuidado para uma vida mais longa e leve. Medicina do emagrecimento, atendimento presencial em Teresina/PI e online para todo o Brasil.</p>
@@ -627,6 +648,14 @@
 </a>
 
 <script>
+  // ============ Hero date (mês/ano dinâmicos) ============
+  const heroDate = document.getElementById('heroDate');
+  if (heroDate) {
+    const now = new Date();
+    const month = now.toLocaleString('pt-BR', { month: 'long' });
+    heroDate.textContent = `${month} ${now.getFullYear()} · Aceitando novos pacientes`;
+  }
+
   // ============ Reveal on scroll ============
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
