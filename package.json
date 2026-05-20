@@ -8,7 +8,7 @@
     "watch:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
     "serve": "npx --yes http-server . -p 5173 -c-1 -o /index.html",
     "dev": "npm run build:css && npm run serve",
-    "build": "npm run build:css && rm -rf public && mkdir -p public/dist public/src && cp index.html public/ && cp dist/output.css public/dist/ && cp -R src/assets public/src/assets",
+    "build": "npm run build:css && rm -rf public && mkdir -p public/dist public/src && cp dist/output.css public/dist/ && cp -R src/assets public/src/assets && cp _headers public/_headers && V=$(date +%s) && sed \"s|./dist/output.css|./dist/output.css?v=$V|g\" index.html > public/index.html",
     "deploy": "npm run build && npx wrangler pages deploy public --project-name=nutri-land --commit-dirty=true"
   },
   "devDependencies": {
