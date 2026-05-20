@@ -886,7 +886,9 @@
           link.classList.add('active');
           activeLink = link;
           pill.classList.add('show');
-          movePillTo(link);
+          if (!navLinks.matches(':hover')) {
+            movePillTo(link);
+          }
         }
       }
     });
@@ -898,7 +900,7 @@
   window.addEventListener('scroll', () => {
     const should = lastShrunk ? window.scrollY > 40 : window.scrollY > 140;
     if (should !== lastShrunk) { topnav.classList.toggle('shrunk', should); lastShrunk = should; }
-    if (activeLink) movePillTo(activeLink);
+    if (activeLink && !navLinks.matches(':hover')) movePillTo(activeLink);
   }, { passive: true });
   window.addEventListener('resize', () => { if (activeLink) movePillTo(activeLink); });
 
