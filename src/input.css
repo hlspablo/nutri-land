@@ -1207,13 +1207,36 @@ section.no-rule { border-top: 0; }
   border: 1px solid var(--rule); border-radius: 18px; overflow: hidden;
   background: var(--paper);
 }
-@media (max-width: 720px) { .result-strip { grid-template-columns: 1fr 1fr; } }
 .res { padding: 40px 32px; border-right: 1px solid var(--rule); }
 .res:last-child { border-right: 0; }
-@media (max-width: 720px) { .res { border-right: 0; border-bottom: 1px solid var(--rule); } }
-.res .n { font-family: theme('fontFamily.serif'); font-size: 52px; line-height: 1.0; letter-spacing: -0.016em; font-weight: 700; color: var(--ink); }
+.res .n {
+  font-family: theme('fontFamily.serif');
+  font-size: clamp(32px, 5.4vw, 52px);
+  line-height: 1.08;
+  letter-spacing: -0.016em;
+  font-weight: 700;
+  color: var(--ink);
+  white-space: nowrap;
+}
 .res .n em { font-style: italic; color: var(--accent-dk); font-weight: 700; }
 .res .l { font-size: 13px; color: var(--ink-soft); margin-top: 12px; line-height: 1.55; }
+
+@media (max-width: 720px) {
+  .result-strip { grid-template-columns: 1fr 1fr; border-radius: 14px; }
+  .res {
+    padding: 24px 18px;
+    border-right: 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .res:nth-child(2n+1) { border-right: 1px solid var(--rule); }
+  .res:nth-child(n+3) { border-bottom: 0; }
+  .res .l { font-size: 12.5px; margin-top: 8px; line-height: 1.5; }
+}
+
+@media (max-width: 420px) {
+  .res { padding: 20px 14px; }
+  .res .l { font-size: 12px; }
+}
 
 /* FAQ */
 .faq {
