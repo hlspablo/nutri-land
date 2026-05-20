@@ -6,11 +6,11 @@
 /* TOKENS — paleta clean (creme dominante + verde acento)        */
 /* ============================================================ */
 :root {
-  /* Surfaces — antes dark, agora creme */
-  --bg:        #f7f1e3;   /* fundo dominante da página */
-  --bg-2:      #efe7d3;   /* superfície secundária / hover quente */
-  --bg-3:      #e6dcc2;   /* superfície terciária */
-  --bg-4:      #d4c9a8;   /* mais saturado */
+  /* Surfaces — branco principal, creme nos detalhes */
+  --bg:        #ffffff;   /* fundo dominante da página (branco) */
+  --bg-2:      #f7f1e3;   /* creme — seções alternadas, detalhes, marquee */
+  --bg-3:      #efe7d3;   /* creme mais saturado — hover, avatares */
+  --bg-4:      #e6dcc2;
   --paper:     #ffffff;   /* branco puro p/ cards */
 
   /* Dark accents — antes noir/ebony, agora forest green */
