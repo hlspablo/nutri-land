@@ -6,6 +6,8 @@
 /* TOKENS — paleta da marca (verde floresta + tons vivos)        */
 /* ============================================================ */
 :root {
+  --noir:      #03100d;
+  --ebony:     #071915;
   --bg:        #08241f;
   --bg-2:      #0d332d;
   --bg-3:      #155047;
@@ -37,10 +39,11 @@
   html { scroll-behavior: smooth; overflow-anchor: none; }
   body {
     background:
-      radial-gradient(circle at 12% 8%, color-mix(in oklab, var(--teal) 22%, transparent), transparent 28%),
-      radial-gradient(circle at 82% 14%, color-mix(in oklab, var(--coral) 20%, transparent), transparent 27%),
-      radial-gradient(circle at 72% 92%, color-mix(in oklab, var(--gold) 14%, transparent), transparent 30%),
-      linear-gradient(135deg, #061b18 0%, var(--bg) 42%, #0f302a 100%);
+      radial-gradient(circle at 80% 38%, color-mix(in oklab, var(--bg-3) 70%, transparent), transparent 42%),
+      radial-gradient(circle at 18% 6%, color-mix(in oklab, var(--teal) 16%, transparent), transparent 26%),
+      radial-gradient(circle at 84% 16%, color-mix(in oklab, var(--coral) 16%, transparent), transparent 25%),
+      radial-gradient(circle at 70% 92%, color-mix(in oklab, var(--gold) 10%, transparent), transparent 30%),
+      linear-gradient(180deg, var(--noir) 0%, var(--ebony) 18%, var(--bg) 55%, #0a2722 100%);
     color: var(--ink);
     font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
@@ -153,17 +156,19 @@ body::before {
 nav.top {
   position: sticky; top: 0; z-index: 50;
   background:
-    linear-gradient(90deg, var(--bg), var(--bg-2));
-  border-bottom: 1px solid color-mix(in oklab, var(--teal) 24%, var(--rule-soft));
+    linear-gradient(180deg, var(--noir) 0%, var(--ebony) 70%, color-mix(in oklab, var(--bg) 92%, var(--noir)) 100%);
+  border-bottom: 1px solid color-mix(in oklab, var(--teal) 18%, var(--rule-soft));
+  box-shadow: 0 12px 32px -18px rgba(0,0,0,.55);
   transition: border-color .3s;
   isolation: isolate;
   transform: translateZ(0);
 }
 .util {
-  border-bottom: 1px solid var(--rule-soft);
+  border-bottom: 1px solid color-mix(in oklab, var(--ink) 8%, transparent);
   height: 40px; overflow: hidden;
   font-family: theme('fontFamily.mono'); font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase;
   color: var(--ink-soft);
+  background: linear-gradient(90deg, #000 0%, var(--noir) 50%, #000 100%);
   transition: height .4s var(--ease-out), opacity .3s, border-color .3s;
 }
 .util .row { display: flex; align-items: center; justify-content: space-between; height: 100%; gap: 24px; }
@@ -229,9 +234,10 @@ nav.top.shrunk .main-row { height: 68px; }
   position: relative; display: flex; gap: 2px;
   font-size: 14px; color: var(--ink-soft);
   background:
-    linear-gradient(120deg, color-mix(in oklab, var(--bg-2) 88%, transparent), color-mix(in oklab, var(--teal-dk) 22%, var(--bg-2)));
-  border: 1px solid color-mix(in oklab, var(--teal) 24%, var(--rule));
+    linear-gradient(120deg, color-mix(in oklab, var(--noir) 70%, transparent), color-mix(in oklab, var(--teal-dk) 14%, var(--ebony)));
+  border: 1px solid color-mix(in oklab, var(--teal) 18%, var(--rule));
   border-radius: 999px; padding: 5px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.04), 0 4px 14px -8px rgba(0,0,0,.5);
 }
 .nav-links a {
   position: relative; z-index: 2;
@@ -240,6 +246,7 @@ nav.top.shrunk .main-row { height: 68px; }
 }
 .nav-links a:hover { color: var(--bg); font-weight: 500; }
 .nav-links a.active { color: var(--bg); font-weight: 500; }
+.nav-links:hover a.active:not(:hover) { color: var(--ink-soft); font-weight: 400; }
 .nav-links .pill {
   position: absolute; top: 5px; left: 0;
   height: calc(100% - 10px); width: 0;
@@ -825,9 +832,10 @@ section.no-rule { border-top: 0; }
 }
 #especialidades {
   background:
-    radial-gradient(ellipse 42% 34% at 92% 16%, color-mix(in oklab, var(--coral) 16%, transparent), transparent 64%),
-    radial-gradient(ellipse 38% 32% at 4% 76%, color-mix(in oklab, var(--teal) 16%, transparent), transparent 64%),
-    color-mix(in oklab, var(--bg-2) 54%, var(--bg));
+    radial-gradient(ellipse 42% 34% at 92% 16%, color-mix(in oklab, var(--coral) 22%, transparent), transparent 60%),
+    radial-gradient(ellipse 38% 32% at 4% 76%, color-mix(in oklab, var(--teal) 22%, transparent), transparent 60%),
+    linear-gradient(180deg, var(--noir) 0%, var(--ebony) 100%);
+  box-shadow: inset 0 1px 0 color-mix(in oklab, var(--gold) 10%, transparent);
 }
 #metodo {
   background:
@@ -836,9 +844,10 @@ section.no-rule { border-top: 0; }
 }
 #resultados {
   background:
-    radial-gradient(ellipse 44% 34% at 14% 16%, color-mix(in oklab, var(--rose) 13%, transparent), transparent 62%),
-    radial-gradient(ellipse 40% 34% at 88% 72%, color-mix(in oklab, var(--teal) 15%, transparent), transparent 62%),
-    color-mix(in oklab, var(--bg-2) 42%, var(--bg));
+    radial-gradient(ellipse 44% 34% at 14% 16%, color-mix(in oklab, var(--rose) 20%, transparent), transparent 58%),
+    radial-gradient(ellipse 40% 34% at 88% 72%, color-mix(in oklab, var(--teal) 22%, transparent), transparent 58%),
+    linear-gradient(180deg, var(--ebony) 0%, var(--noir) 100%);
+  box-shadow: inset 0 1px 0 color-mix(in oklab, var(--gold) 10%, transparent);
 }
 #faq {
   background:
@@ -1081,17 +1090,18 @@ details p {
 /* CTA FINAL */
 .cta-final {
   background:
-    linear-gradient(135deg, color-mix(in oklab, var(--bg-2) 84%, #000), #143c35 58%, #1c473d 100%);
+    linear-gradient(180deg, var(--ebony) 0%, var(--noir) 55%, #000 100%);
   color: var(--ink);
   padding: 140px 0; border-top: 0;
   position: relative; overflow: hidden;
+  box-shadow: inset 0 1px 0 color-mix(in oklab, var(--gold) 10%, transparent);
 }
 .cta-final::before {
   content: ""; position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse 50% 70% at 88% 22%, color-mix(in oklab, var(--coral) 26%, transparent), transparent 60%),
-    radial-gradient(ellipse 40% 60% at 8% 88%, color-mix(in oklab, var(--teal) 32%, transparent), transparent 60%),
-    radial-gradient(ellipse 28% 28% at 52% 24%, color-mix(in oklab, var(--gold) 18%, transparent), transparent 62%);
+    radial-gradient(ellipse 50% 70% at 88% 22%, color-mix(in oklab, var(--coral) 32%, transparent), transparent 58%),
+    radial-gradient(ellipse 40% 60% at 8% 88%, color-mix(in oklab, var(--teal) 38%, transparent), transparent 58%),
+    radial-gradient(ellipse 28% 28% at 52% 24%, color-mix(in oklab, var(--gold) 22%, transparent), transparent 60%);
   pointer-events: none;
 }
 .cta-final .wrap { position: relative; z-index: 2; }
@@ -1147,10 +1157,13 @@ details p {
 /* FOOTER */
 footer {
   background:
-    radial-gradient(circle at 88% 0%, color-mix(in oklab, var(--teal) 12%, transparent), transparent 28%),
-    var(--bg-2);
+    radial-gradient(circle at 88% 0%, color-mix(in oklab, var(--teal) 14%, transparent), transparent 32%),
+    radial-gradient(circle at 8% 100%, color-mix(in oklab, var(--gold) 8%, transparent), transparent 30%),
+    linear-gradient(180deg, var(--ebony) 0%, var(--noir) 60%, #000 100%);
   color: color-mix(in oklab, var(--ink) 75%, transparent);
-  padding: 72px 0 44px; border-top: 1px solid var(--rule);
+  padding: 72px 0 44px;
+  border-top: 1px solid color-mix(in oklab, var(--gold) 18%, transparent);
+  box-shadow: inset 0 1px 0 color-mix(in oklab, var(--gold) 6%, transparent);
 }
 .foot-grid { display: grid; grid-template-columns: 2.2fr 1fr 1fr 1fr; gap: 56px; align-items: start; }
 @media (max-width: 880px) { .foot-grid { grid-template-columns: 1fr 1fr; gap: 40px; } }
