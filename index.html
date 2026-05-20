@@ -367,7 +367,8 @@
         </article>
       </div>
 
-      <div class="media-card video-card reveal" data-label="Procedimentos · consultório" data-video="./src/assets/videos/0.mp4" style="--rd:200ms">
+      <div class="media-card video-card reveal" data-label="Procedimentos · consultório" data-video="./src/assets/videos/0.mp4" data-poster="./src/assets/videos/0-poster.jpg" style="--rd:200ms">
+        <img class="poster" src="./src/assets/videos/0-poster.jpg" alt="Bioimpedância no consultório do Dr. Antônio Wellington" loading="lazy" decoding="async" />
         <button class="play" type="button" aria-label="Reproduzir vídeo">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
         </button>
@@ -843,6 +844,7 @@
         video = document.createElement('video');
         video.className = 'vid';
         video.src = src;
+        if (card.dataset.poster) video.poster = card.dataset.poster;
         video.playsInline = true;
         video.controls = true;
         video.preload = 'auto';

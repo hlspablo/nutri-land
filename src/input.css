@@ -691,6 +691,23 @@ nav.top.shrunk .main-row { height: 68px; }
   object-fit: cover; z-index: 3;
   background: var(--bg);
 }
+.video-card .poster {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; z-index: 2;
+  border-radius: inherit;
+  transition: opacity .4s var(--ease-out), transform .8s var(--ease-out);
+}
+.video-card::before {
+  content: ""; position: absolute; inset: 0; z-index: 4;
+  background:
+    radial-gradient(circle at 50% 50%, transparent 0 28%, color-mix(in oklab, var(--bg) 55%, transparent) 75%),
+    linear-gradient(180deg, color-mix(in oklab, var(--bg) 28%, transparent) 0%, transparent 30%, transparent 70%, color-mix(in oklab, var(--bg) 70%, transparent) 100%);
+  pointer-events: none;
+  transition: opacity .35s var(--ease-out);
+  border-radius: inherit;
+}
+.video-card:hover .poster { transform: scale(1.025); }
+.video-card.playing .poster { opacity: 0; pointer-events: none; }
 .video-card .play {
   position: absolute; top: 50%; left: 50%;
   transform: translate(-50%, -50%);
