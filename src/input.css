@@ -6,11 +6,11 @@
 /* TOKENS — paleta clean (creme dominante + verde acento)        */
 /* ============================================================ */
 :root {
-  /* Surfaces — branco principal, creme nos detalhes */
+  /* Surfaces — branco principal, verde sutil nos detalhes */
   --bg:        #ffffff;   /* fundo dominante da página (branco) */
-  --bg-2:      #f7f1e3;   /* creme — seções alternadas, detalhes, marquee */
-  --bg-3:      #efe7d3;   /* creme mais saturado — hover, avatares */
-  --bg-4:      #e6dcc2;
+  --bg-2:      #ecf1ed;   /* verde muito claro — seções alternadas, detalhes */
+  --bg-3:      #dde7df;   /* verde claro — hover, ícones */
+  --bg-4:      #c8d6cd;   /* moss-soft — bordas, fundos sutis */
   --paper:     #ffffff;   /* branco puro p/ cards */
 
   /* Dark accents — antes noir/ebony, agora forest green */
@@ -693,7 +693,7 @@ nav.top.shrunk .main-row { height: 68px; }
 .marquee {
   border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
-  background: color-mix(in oklab, var(--accent) 28%, var(--bg));
+  background: color-mix(in oklab, var(--moss) 18%, var(--bg));
   color: var(--forest);
   overflow: hidden; padding: 8px 0; display: flex;
 }
