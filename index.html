@@ -597,36 +597,67 @@
       </div>
     </div>
 
-    <div class="testimonials">
-      <article class="testimonial gold reveal">
-        <div class="glyph">"</div>
-        <p class="quote">
-          Cheguei no Dr. Antônio exausto de dietas que nunca duravam. Em <em>seis meses</em>
-          perdi 14 kg, normalizei a glicemia e — pela primeira vez — parei de pensar em
-          comida o tempo todo.
-        </p>
-        <div class="who">
-          <div class="av"></div>
-          <div>
-            <div class="name">Mariana A.</div>
-            <div class="role">Advogada · 38 anos · paciente desde 2024</div>
-          </div>
-        </div>
-      </article>
-      <article class="testimonial reveal" style="--rd:160ms">
-        <div class="glyph">"</div>
-        <p class="quote">
-          O acompanhamento foi <em>impecável</em>. Saí da pré-diabetes, recuperei energia,
-          dormi melhor e voltei a praticar esporte. Indico de olhos fechados.
-        </p>
-        <div class="who">
-          <div class="av"></div>
-          <div>
-            <div class="name">Carlos H.</div>
-            <div class="role">Empresário · 51 anos · paciente desde 2023</div>
-          </div>
-        </div>
-      </article>
+    <div class="results-gallery reveal" role="list">
+      <button class="gallery-tile reveal" type="button" role="listitem"
+              data-media="image" data-src="./src/assets/results/result-01.jpg" style="--rd:0ms">
+        <img src="./src/assets/results/result-01.jpg" alt="Comparativo antes e depois de paciente" loading="lazy" decoding="async">
+      </button>
+      <button class="gallery-tile reveal" type="button" role="listitem"
+              data-media="image" data-src="./src/assets/results/result-02.jpg" style="--rd:40ms">
+        <img src="./src/assets/results/result-02.jpg" alt="Resultado de paciente em 4 meses" loading="lazy" decoding="async">
+      </button>
+      <button class="gallery-tile gallery-tile--video reveal" type="button" role="listitem"
+              data-media="video"
+              data-src="./src/assets/results/testimonial-01.mp4"
+              data-poster="./src/assets/results/testimonial-01.jpg" style="--rd:80ms">
+        <img src="./src/assets/results/testimonial-01.jpg" alt="Depoimento em vídeo de paciente" loading="lazy" decoding="async">
+        <span class="gallery-tile__play" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg>
+        </span>
+        <span class="gallery-tile__badge">Depoimento</span>
+      </button>
+      <button class="gallery-tile reveal" type="button" role="listitem"
+              data-media="image" data-src="./src/assets/results/result-03.jpg" style="--rd:120ms">
+        <img src="./src/assets/results/result-03.jpg" alt="Paciente mostrando calça antiga" loading="lazy" decoding="async">
+      </button>
+      <button class="gallery-tile reveal" type="button" role="listitem"
+              data-media="image" data-src="./src/assets/results/result-04.jpg" style="--rd:160ms">
+        <img src="./src/assets/results/result-04.jpg" alt="Paciente em consulta com Dr. Antonio Wellington" loading="lazy" decoding="async">
+      </button>
+      <button class="gallery-tile reveal" type="button" role="listitem"
+              data-media="image" data-src="./src/assets/results/result-05.jpg" style="--rd:200ms">
+        <img src="./src/assets/results/result-05.jpg" alt="Comparativo de paciente: antes e depois" loading="lazy" decoding="async">
+      </button>
+      <button class="gallery-tile reveal" type="button" role="listitem"
+              data-media="image" data-src="./src/assets/results/result-06.jpg" style="--rd:240ms">
+        <img src="./src/assets/results/result-06.jpg" alt="Avaliação de medidas com Dr. Antonio Wellington" loading="lazy" decoding="async">
+      </button>
+      <button class="gallery-tile gallery-tile--video reveal" type="button" role="listitem"
+              data-media="video"
+              data-src="./src/assets/results/testimonial-02.mp4"
+              data-poster="./src/assets/results/testimonial-02.jpg" style="--rd:280ms">
+        <img src="./src/assets/results/testimonial-02.jpg" alt="Segundo depoimento em vídeo" loading="lazy" decoding="async">
+        <span class="gallery-tile__play" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg>
+        </span>
+        <span class="gallery-tile__badge">Depoimento</span>
+      </button>
+      <button class="gallery-tile reveal" type="button" role="listitem"
+              data-media="image" data-src="./src/assets/results/result-07.jpg" style="--rd:320ms">
+        <img src="./src/assets/results/result-07.jpg" alt="Transformação ao longo dos anos" loading="lazy" decoding="async">
+      </button>
+      <button class="gallery-tile reveal" type="button" role="listitem"
+              data-media="image" data-src="./src/assets/results/result-08.jpg" style="--rd:360ms">
+        <img src="./src/assets/results/result-08.jpg" alt="Paciente na balança após acompanhamento" loading="lazy" decoding="async">
+      </button>
+      <button class="gallery-tile reveal" type="button" role="listitem"
+              data-media="image" data-src="./src/assets/results/result-09.jpg" style="--rd:400ms">
+        <img src="./src/assets/results/result-09.jpg" alt="Paciente em consulta de emagrecimento" loading="lazy" decoding="async">
+      </button>
+      <button class="gallery-tile reveal" type="button" role="listitem"
+              data-media="image" data-src="./src/assets/results/result-10.jpg" style="--rd:440ms">
+        <img src="./src/assets/results/result-10.jpg" alt="Paciente atendido por Dr. Antonio Wellington" loading="lazy" decoding="async">
+      </button>
     </div>
 
     <div class="result-strip reveal">
@@ -996,6 +1027,108 @@
       });
     }, { passive: true });
   }
+</script>
+
+<!-- ============ LIGHTBOX (Galeria de Resultados) ============ -->
+<div class="lightbox" id="resultsLightbox" aria-hidden="true" role="dialog" aria-label="Visualizar resultado" aria-modal="true">
+  <button class="lightbox__close" type="button" aria-label="Fechar">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" width="22" height="22"><path d="M6 6l12 12M6 18L18 6"/></svg>
+  </button>
+  <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Anterior">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M15 6l-6 6 6 6"/></svg>
+  </button>
+  <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Próximo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M9 6l6 6-6 6"/></svg>
+  </button>
+  <div class="lightbox__stage"></div>
+  <div class="lightbox__counter" aria-live="polite"></div>
+</div>
+
+<script>
+  (function () {
+    const lb = document.getElementById('resultsLightbox');
+    if (!lb) return;
+    const tiles = Array.from(document.querySelectorAll('.gallery-tile'));
+    if (!tiles.length) return;
+    const stage = lb.querySelector('.lightbox__stage');
+    const counter = lb.querySelector('.lightbox__counter');
+    const btnClose = lb.querySelector('.lightbox__close');
+    const btnPrev = lb.querySelector('.lightbox__nav--prev');
+    const btnNext = lb.querySelector('.lightbox__nav--next');
+    let current = -1;
+
+    function render(i) {
+      stage.replaceChildren();
+      const t = tiles[i];
+      const media = t.dataset.media;
+      const src = t.dataset.src;
+      if (media === 'video') {
+        const v = document.createElement('video');
+        v.src = src;
+        v.poster = t.dataset.poster || '';
+        v.controls = true;
+        v.autoplay = true;
+        v.playsInline = true;
+        v.preload = 'metadata';
+        stage.appendChild(v);
+      } else {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = t.querySelector('img')?.alt || '';
+        stage.appendChild(img);
+      }
+      counter.textContent = `${i + 1} / ${tiles.length}`;
+    }
+
+    function open(i) {
+      current = i;
+      render(i);
+      lb.classList.add('is-open');
+      lb.setAttribute('aria-hidden', 'false');
+      document.documentElement.style.overflow = 'hidden';
+      btnClose.focus({ preventScroll: true });
+    }
+
+    function close() {
+      lb.classList.remove('is-open');
+      lb.setAttribute('aria-hidden', 'true');
+      document.documentElement.style.overflow = '';
+      stage.replaceChildren();
+      if (current >= 0) tiles[current].focus({ preventScroll: true });
+      current = -1;
+    }
+
+    function step(delta) {
+      if (current < 0) return;
+      const n = tiles.length;
+      render((current + delta + n) % n);
+      current = (current + delta + n) % n;
+    }
+
+    tiles.forEach((t, i) => t.addEventListener('click', () => open(i)));
+
+    btnClose.addEventListener('click', close);
+    btnPrev.addEventListener('click', () => step(-1));
+    btnNext.addEventListener('click', () => step(1));
+    lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
+
+    document.addEventListener('keydown', (e) => {
+      if (!lb.classList.contains('is-open')) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowLeft') step(-1);
+      else if (e.key === 'ArrowRight') step(1);
+    });
+
+    // swipe (mobile)
+    let touchX = null;
+    lb.addEventListener('touchstart', (e) => { touchX = e.touches[0].clientX; }, { passive: true });
+    lb.addEventListener('touchend', (e) => {
+      if (touchX == null) return;
+      const dx = e.changedTouches[0].clientX - touchX;
+      if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1);
+      touchX = null;
+    });
+  })();
 </script>
 
 </body>
