@@ -978,7 +978,7 @@ section.no-rule { border-top: 0; }
 }
 .spec.feature h3 { color: var(--ink-cream); }
 .spec h3 em { font-style: italic; color: var(--accent); font-weight: 700; }
-.spec.feature h3 em { color: var(--accent); }
+.spec.feature h3 em { color: var(--ink-cream); }
 .spec p { color: var(--ink-soft); font-size: 15.5px; line-height: 1.6; }
 .spec .arrow {
   align-self: flex-start; width: 38px; height: 38px;
@@ -987,8 +987,8 @@ section.no-rule { border-top: 0; }
   transition: background .25s, border-color .25s, color .25s, transform .35s var(--ease-bounce);
 }
 .spec.feature .arrow { border-color: rgba(246,248,245,0.32); color: var(--ink-cream); }
-.spec:hover .arrow { background: var(--accent); border-color: var(--accent); color: var(--forest); transform: rotate(-45deg) scale(1.05); }
-.spec.feature:hover .arrow { background: var(--accent); border-color: var(--accent); color: var(--forest); }
+.spec:hover .arrow { background: var(--accent); border-color: var(--accent); color: var(--ink-cream); transform: rotate(-45deg) scale(1.05); }
+.spec.feature:hover .arrow { background: var(--accent); border-color: var(--accent); color: var(--ink-cream); }
 
 /* ============================================================ */
 /* ATENDIMENTO ONLINE — telemedicina + mockup videochamada      */
