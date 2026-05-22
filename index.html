@@ -860,7 +860,7 @@
     const r = el.getBoundingClientRect();
     const pr = navLinks.getBoundingClientRect();
     pill.style.width = r.width + 'px';
-    pill.style.transform = `translateX(${r.left - pr.left - 5}px)`;
+    pill.style.transform = `translateX(${r.left - pr.left - navLinks.clientLeft}px)`;
   };
   links.forEach(a => {
     a.addEventListener('mouseenter', () => { pill.classList.add('show'); movePillTo(a); });
