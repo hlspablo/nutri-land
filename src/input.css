@@ -759,7 +759,7 @@ nav.top.shrunk .main-row { height: 78px; }
 }
 
 .hero-stats {
-  display: grid; grid-template-columns: repeat(3, 1fr);
+  display: grid; grid-template-columns: 2.4fr 1fr;
   border-top: 1px solid var(--rule);
   margin-top: 108px; padding-top: 36px; gap: 18px;
 }
@@ -771,8 +771,7 @@ nav.top.shrunk .main-row { height: 78px; }
   background: rgba(20,54,44,0.035);
   transition: border-color .25s, transform .35s var(--ease-out), background .25s;
 }
-.stat:nth-child(2) { --stat-accent: var(--accent); }
-.stat:nth-child(3) { --stat-accent: var(--moss); }
+.stat:nth-child(2) { --stat-accent: var(--moss); }
 .stat:hover { border-color: var(--stat-accent); transform: translateY(-2px); background: rgba(20,54,44,0.055); }
 .stat .num em { color: var(--stat-accent); }
 .stat .num .count { color: var(--stat-accent); }
@@ -785,10 +784,38 @@ nav.top.shrunk .main-row { height: 78px; }
 }
 .stat .num em { font-style: italic; font-weight: 600; }
 .stat .lbl { font-size: 13.5px; color: var(--ink-mute); margin-top: 14px; max-width: 260px; line-height: 1.5; }
-@media (max-width: 720px) {
+
+.stat-bio {
+  --stat-accent: var(--forest);
+  padding: 32px 36px;
+  display: flex; flex-direction: column; gap: 14px;
+  justify-content: center;
+}
+.stat-bio .bio-eyebrow {
+  font-family: theme('fontFamily.sans');
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--forest); font-weight: 600;
+  margin-bottom: 4px;
+}
+.stat-bio .bio-text {
+  font-family: theme('fontFamily.serif');
+  font-size: 18px; line-height: 1.55;
+  color: var(--ink); letter-spacing: -0.005em;
+  max-width: 64ch;
+}
+.stat-bio .bio-text em {
+  font-style: italic; font-weight: 600; color: var(--forest);
+}
+
+@media (max-width: 980px) {
   .hero-stats { grid-template-columns: 1fr; }
+  .stat-bio .bio-text { font-size: 17px; }
+}
+@media (max-width: 720px) {
   .stat { padding-bottom: 24px; border-bottom: 1px solid rgba(20,54,44,0.12); }
   .stat:last-child { border-bottom: 0; }
+  .stat-bio { padding: 28px 24px; }
+  .stat-bio .bio-text { font-size: 16px; }
 }
 
 /* ============================================================ */
