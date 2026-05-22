@@ -256,11 +256,12 @@ nav.top.shrunk .main-row { height: 78px; }
 }
 .nav-links a {
   position: relative; z-index: 2;
-  padding: 10px 19px; border-radius: 999px;
+  padding: 10px 14px; border-radius: 999px;
   transition: color .25s; letter-spacing: -0.005em;
+  font-weight: 500;
 }
 .nav-links a:hover { color: var(--forest); font-weight: 500; }
-.nav-links a.active { color: var(--forest); font-weight: 600; }
+.nav-links a.active { color: var(--forest); font-weight: 700; letter-spacing: -0.01em; }
 .nav-links:hover a.active:not(:hover) { color: var(--ink-soft); font-weight: 400; }
 .nav-links .pill {
   position: absolute; top: 5px; left: 0;
