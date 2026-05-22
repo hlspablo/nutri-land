@@ -1816,14 +1816,14 @@ footer {
 }
 .cta-band-title em { font-style: italic; color: var(--forest); font-weight: 700; }
 .btn-whats-sm {
-  background: var(--whats); color: #0a1f17;
-  padding: 13px 22px; border-radius: 999px;
-  font-size: 14.5px; font-weight: 600;
-  display: inline-flex; align-items: center; gap: 10px; white-space: nowrap;
+  background: var(--forest); color: var(--ink-cream);
+  padding: 15px 28px; border-radius: 999px;
+  font-size: 16px; font-weight: 600;
+  display: inline-flex; align-items: center; gap: 11px; white-space: nowrap;
   transition: transform .25s var(--ease-out), background .25s, box-shadow .35s;
 }
-.btn-whats-sm:hover { background: #1ebe5d; transform: translateY(-1px); box-shadow: 0 10px 28px -10px var(--whats); }
-.btn-whats-sm svg { width: 16px; height: 16px; }
+.btn-whats-sm:hover { background: var(--forest-2); transform: translateY(-1px); box-shadow: 0 12px 28px -16px rgba(20,54,44,0.45); }
+.btn-whats-sm svg { width: 18px; height: 18px; }
 @media (max-width: 860px) {
   .cta-band { padding: 48px 0 60px; }
   .cta-band-inner { flex-direction: column; align-items: flex-start; gap: 20px; padding: 24px 22px; }
