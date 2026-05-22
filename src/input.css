@@ -1825,6 +1825,8 @@ footer {
 }
 .btn-whats-sm:hover { background: var(--forest-2); transform: translateY(-1px); box-shadow: 0 12px 28px -16px rgba(20,54,44,0.45); }
 .btn-whats-sm svg { width: 18px; height: 18px; }
+.btn-whats-sm.vc-cta { padding: 17px 31px; font-size: 17.5px; gap: 12px; }
+.btn-whats-sm.vc-cta svg { width: 20px; height: 20px; }
 @media (max-width: 860px) {
   .cta-band { padding: 48px 0 60px; }
   .cta-band-inner { flex-direction: column; align-items: flex-start; gap: 20px; padding: 24px 22px; }
