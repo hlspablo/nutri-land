@@ -1055,9 +1055,10 @@ section.no-rule { border-top: 0; }
 .online-visual {
   position: relative; perspective: 1400px;
   min-height: 480px;
-  display: flex; align-items: center; justify-content: center;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px;
 }
 @media (max-width: 1000px) { .online-visual { min-height: 420px; } }
+.vc-cta { margin-top: 5px; }
 
 .vc-frame {
   position: relative;
